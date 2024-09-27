@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
-import { Checkbox, Col, Form, Input, message, Image, Row } from "antd";
+import { Checkbox, Col, Form, Input, message, Image, Row, Typography } from "antd";
 import { useCookies } from "react-cookie";
 import "./styles.scss";
 import { useNavigate } from "react-router-dom";
 import { useDataMutation } from "../../ReactQuery/ApiCrud/useDataMutation";
-import { Title, Text, Button } from "../../Components";
 import { ServicesNames } from "../../Constants/servicesNames";
 import LoginImage from "../../assets/Images/Login/img-web1.png";
 import LogoImage from "../../assets/Images/Login/Logo.png";
+
+import PasswordIcon from "../../assets/Icons/Login/ic_password.svg";
+import UserIcon from "../../assets/Icons/Login/ic_user.svg";
+import { Button } from "../../Components";
+
+
+const {Text}=Typography
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -46,19 +52,16 @@ const Login = () => {
 
   return (
     <Row className={"loginContainer"}>
-      <Col lg={12} className="image-col">
+      <Col lg={12} className="image-col" sm={0} xs={0}>
       
       <Image preview={false} className={"loginImage"} alt="login" src={LoginImage} />
       </Col>
 
       <Col lg={12} className="form-col">
-      <Col lg={11} className="form-content">
+      <Col xl={12} lg={13} md={13} sm={14} xs={20} className="form-content">
       <Image preview={false} className={"login-logo"} alt="login" src={LogoImage} />
         <Text
-          typographyType={{
-            type: "regular-regular-regular",
-            size: "14px-14px-14px",
-          }}
+        className="font-size-13"
         >
          Welcome back! Please login to your account.
         </Text>
@@ -66,7 +69,6 @@ const Login = () => {
         <Form name="login" onFinish={onFinish} layout="vertical">
           <Form.Item
             requiredMark={false}
-            // label=" *"
             name="login"
             rules={[
               {
@@ -75,15 +77,14 @@ const Login = () => {
               },
             ]}
           >
-            <Input placeholder="Username or Phone Number" />
+            <Input prefix={<Image width={19} preview={false} src={UserIcon}/>} placeholder="Username or Phone Number" />
           </Form.Item>
           <Form.Item
             requiredMark={false}
-            label="Password *"
             name="password"
             rules={[{ required: true, message: "Please input your password!" }]}
           >
-            <Input.Password placeholder="************" />
+            <Input.Password prefix={<Image width={19} preview={false} src={PasswordIcon}/>} placeholder="Password" />
           </Form.Item>
           <div className="remember-container">
             <Form.Item
@@ -95,7 +96,13 @@ const Login = () => {
             </Form.Item>
             <a className="login-link" href={""}>Forget Password</a>
           </div>
-          <Form.Item>
+          <div className="buttons-container">
+          <Button
+              type="secondary"
+              className="register-button"
+            >
+              Register
+            </Button>
             <Button
               type="primary"
               htmlType="submit"
@@ -104,28 +111,17 @@ const Login = () => {
             >
               Login
             </Button>
-          </Form.Item>
+          </div>
         </Form>
-        <div className="login-footer">
+  
+      </Col>
+      <div className="login-footer">
           <Text
-            typographyType={{
-              type: "regular-regular-regular",
-              size: "14px-14px-14px",
-            }}
+            className="font-size-10"
           >
-            Don't have an Account?
-          </Text>
-
-          <Text
-            className="register-link"
-            typographyType={{
-              type: "regular-regular-regular",
-              size: "14px-14px-14px",
-            }}
-          >
+            By signing up you agree to our <span className="privacy">Privacy Policy and Terms</span>
           </Text>
         </div>
-      </Col>
       </Col>
     </Row>
   );

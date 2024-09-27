@@ -2,11 +2,14 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import "./styles.scss";
 import { useAppMediaQuery } from "../../../Hooks/MediaQuery/use-app-media-query";
 import LogoImage from "../../../public/Assets/Images/template/jobhub-logo.svg";
-import { Image } from "antd";
+import { Image, Typography } from "antd";
 import { Layout } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Button , Text, Title} from "../../../Components";
+import { Button} from "../../../Components";
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
+
+
+const {Text} =Typography
 
 interface SharedNavBarProps {
   setToggleMenu?: any;
@@ -97,11 +100,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
               push(item.key);
               toggleNav(false, event);
             }}
-            typographyFontColor={"#05264E"}
-            typographyType={{
-              size: "16px-18px-18px",
-              type: "regular-semi-bold-semi-bold",
-            }}
+           
           >
             {item.label}
           </Text>

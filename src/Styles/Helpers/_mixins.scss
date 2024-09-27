@@ -1,50 +1,4 @@
 // mixins
-@mixin list-reset {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-@mixin central-page {
-  width: 100%;
-  height: auto;
-  display: grid;
-  grid-template-columns: auto max-content auto;
-  grid-template-rows: 20vh auto;
-  grid-template-areas: ". . ." ". content .";
-}
-
-@mixin circle($dimensions) {
-  border-radius: 50%;
-  width: $dimensions;
-  height: $dimensions;
-}
-
-@mixin centering {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin overlay($color, $opacity) {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba($color, $opacity);
-}
-
-@mixin keyF($anim-name) {
-  @-webkit-keyframes #{$anim-name} {
-    @content;
-  }
-  @keyframes #{$anim-name} {
-    @content;
-  }
-}
-
-
 @mixin fixedTypographyStyle() {
   line-height: 160%;
   padding: 0;
@@ -83,43 +37,6 @@
   font-size: $fontSize;
 }
 
-
-@mixin screen-size($size) {
-}
-
-/* start mixin for media queries */
-//@mixin media-query($size) {
-//  @if $size == large-Desktop {
-//    @media (min-width: 1440px) {
-//      @content;
-//    }
-//  } @else if $size == laptop {
-//    @media (max-width: 1439px) {
-//      @content;
-//    }
-//  } @else if $size == tablet {
-//    @media (max-width: 991px) {
-//      @content;
-//    }
-//  } @else if $size == mobile {
-//    @media (max-width: 576px) {
-//      @content;
-//    }
-//  }
-//  @else if $size == is-not-mobile {
-//    @media (min-width: 577px) {
-//      @content;
-//    }
-//  }
-//}
-
-// antd screens (min-width)
-//      xs: '480px',
-//      sm: '576px',
-//      md: '768px',
-//      lg: '992px',
-//      xl: '1200px',
-//      xxl: '1600px',
 @mixin media-query($size) {
 
   @if $size == large-Desktop {
