@@ -17,7 +17,7 @@ const SharedLayout: FunctionComponent<any> = (props) => {
     const{isLargeDesktop}=useAppMediaQuery()
     const [cookies, setCookie] = useCookies(['token']);
 useEffect(()=>{
-console.log(cookies)
+console.log("cookies",cookies)
 if(!cookies?.token){
     push("/login")
 }

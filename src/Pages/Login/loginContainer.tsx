@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { Checkbox, Col, Form, Input, message, Image } from "antd";
+import { Checkbox, Col, Form, Input, message, Image, Row } from "antd";
 import { useCookies } from "react-cookie";
 import "./styles.scss";
 import { useNavigate } from "react-router-dom";
 import { useDataMutation } from "../../ReactQuery/ApiCrud/useDataMutation";
 import { Title, Text, Button } from "../../Components";
+import { ServicesNames } from "../../Constants/servicesNames";
+import LoginImage from "../../assets/Images/Login/img-web1.png"
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -17,7 +19,7 @@ const Login = () => {
   const mutation = useDataMutation<
     { token: string },
     { email: string; password: string }
-  >("post", "user_register/login_user", {
+  >("post", ServicesNames.Login, {
     onSuccess: (data) => {
       setCookie("token", data.token, { path: "/" });
       setToken(data.token);
@@ -42,8 +44,13 @@ const Login = () => {
   }, [cookies?.token]);
 
   return (
-    <div className={"loginContainer"}>
-      <Col lg={7}>
+    <Row className={"loginContainer"}>
+      <Col lg={12} className="image-col">
+      
+      <Image preview={false} className={"loginImage"} alt="login" src={LoginImage} />
+      </Col>
+
+      <Col lg={12}>
         <Text
           typographyFontColor={"#3C65F5"}
           typographyType={{
@@ -54,7 +61,7 @@ const Login = () => {
           Welcome back!
         </Text>
         <Title
-          className="login-title"
+          className={"loginTitle"}
           typographyType={{
             type: "semi-bold-semi-bold-semi-bold",
             size: "32px-32px-32px",
@@ -134,8 +141,7 @@ const Login = () => {
           </Text>
         </div>
       </Col>
-      <Image className="login-image1" alt="login" src={LoginImage1} />
-    </div>
+    </Row>
   );
 };
 

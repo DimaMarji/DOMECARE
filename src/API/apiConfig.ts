@@ -4,7 +4,7 @@ import { Cookies } from 'react-cookie';
 const cookies = new Cookies();  // Initialize cookies
 
 // Base URL from environment variables
-const baseUrl = process.env.NEXT_PUBLIC_BASE_API_URL;
+const baseUrl = import.meta.env.VITE_BASE_API_URL;
 
 // Base Axios instance with default configurations
 const axiosInstance = axios.create({

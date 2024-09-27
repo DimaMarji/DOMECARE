@@ -1,15 +1,12 @@
 .loginContainer {
-    // max-width: 400px;
-    // margin: 15% auto;
     text-align: center;
-    padding: 40px;
-    background-color: #fff;
+    height: 100%;
     border-radius: 8px;
     position: relative;
-    >.ant-col{
-      margin: auto;
-    }
-    .login-title{
+ .image-col{
+  margin-top: auto;
+ }
+    .loginTitle{
       
       margin-bottom: 5px !important;
       margin-top: 5px !important;
@@ -86,12 +83,10 @@
     }
     }
 
-     .login-image1{
-      position: absolute;
-      right: 12%;
-      top: 25%;
-      transition: all 0.3s ease 0s;
-      animation: hero-thumb-animation 2s linear infinite alternate;
+     .ant-image:has(.loginImage){
+     height: 90vh;
+     margin-top: auto;
+    
   }
 
   .register-link{

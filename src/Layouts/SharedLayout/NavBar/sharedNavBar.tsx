@@ -1,17 +1,12 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import "./styles.scss";
 import { useAppMediaQuery } from "../../../Hooks/MediaQuery/use-app-media-query";
-import { useRouter } from "next/router";
-import Arrow from "../../../public/Assets/Icons/down-arrow.svg";
-import Image from "next/image";
-import MenuIcon from "../../../public/Assets/Icons/General/menu-icon.png";
-import CloseIcon from "../../../public/Assets/Icons/General/close-icon.png";
 import LogoImage from "../../../public/Assets/Images/template/jobhub-logo.svg";
-import { Button } from "../../../Components/Atoms/Button";
-import { Text } from "../../../Components/Atoms/Typography/Text";
-import { Dropdown, Select, Space } from "antd";
+import { Image } from "antd";
 import { Layout } from "antd";
-import { useTranslation } from "next-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Button , Text, Title} from "../../../Components";
+import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
 interface SharedNavBarProps {
   setToggleMenu?: any;
@@ -22,13 +17,10 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
   setToggleMenu,
   toggleMenu,
 }) => {
-  const router = useRouter();
-  const { push, asPath: selected ,locale} = useRouter();
-  const { t } = useTranslation('common');
+  const { pathname: selected} = useLocation();
+  const push=useNavigate()
 
-  const switchLanguage = (lang) => {
-    router.push(router.pathname, router.asPath, { locale: lang });
-  };
+ 
 
   const { isMobileOrTablet } = useAppMediaQuery();
 
@@ -42,7 +34,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
       onClick={(event: any) => toggleNav(true, event)}
       className="menu-button"
       type={"link"}
-      icon={<Image alt={"menu-icon"} src={MenuIcon} />}
+      icon={<MenuOutlined />}
     />
   );
   const closeMenu = (
@@ -51,7 +43,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
       className="menu-button"
       type={"link"}
       icon={
-        <Image alt={"close-icon"} className={"close-icon"} src={CloseIcon} />
+        <CloseOutlined />
       }
     />
   );
@@ -125,7 +117,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
           type={"link"}
           className={"register-button"}
           onClick={(event) => {
-            push("/ContactUs", "/contact-us", { shallow: true });
+            push("/ContactUs");
             toggleNav(false, event);
           }}
         >
@@ -135,7 +127,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
           type={"primary"}
           className={"sign-in-button"}
           onClick={(event) => {
-            push("/ContactUs", "/contact-us", { shallow: true });
+            push("/ContactUs");
             toggleNav(false, event);
           }}
         >
@@ -161,13 +153,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
 
   return (
     <>
-      <style global jsx>
-        {`
-          html {
-            scroll-behavior: smooth;
-          }
-        `}
-      </style>
+
       <Header
         id="job-nav"
         className={
@@ -180,7 +166,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
           <Button
             type={"link"}
             onClick={(event) => {
-              push("/", "/");
+              push("/");
               toggleNav(false, event);
             }}
             className={"logo-button"}

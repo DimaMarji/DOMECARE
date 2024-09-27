@@ -1,9 +1,11 @@
-import  {FunctionComponent, useContext, useEffect} from "react";
+import  {FunctionComponent} from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {privateRoutes_} from "./PrivateRoutes/privateRoutes_";
+import PrivateRoutes from "./PrivateRoutes/privateRoutes_";
 import PublicRoutes from "./PublicRoutes/publicRoutes";
 import SystemRoutes from "./SystemRoutes";
 import {Loading} from "../Pages/Loading";
+import { SharedLayout } from "../Layouts/SharedLayout";
+import Login from "../Pages/Login/loginContainer";
 
 interface MainRouterProps {
 }
@@ -18,11 +20,19 @@ const MainRouter: FunctionComponent<MainRouterProps> = () => {
         <RouterProvider
             router={createBrowserRouter([
                 {
+                    path: "/login",
+                    element: (
+                           <Login/>
+                    ),
+                 
+                },
+              
+                {
                     path: "/",
                     element: (
-                            <div/>
+                           <></>
                     ),
-                    children: privateRoutes_ ?? <Loading/>,
+                    children: PrivateRoutes ?? <Loading/>,
                 },
               
                 {
