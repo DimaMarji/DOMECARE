@@ -67,7 +67,7 @@ export const colors = [
 
 export const languagesWithFontFamilies = {
     en: [
-        'plus-jakarta-sans',
+        'comfortaa',
     ] as const
 }
 

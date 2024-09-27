@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { defaultOptions } from './ReactQuery/config';
 import MainRouter from './Routers';
 import "antd/dist/antd.min.css";

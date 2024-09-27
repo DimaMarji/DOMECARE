@@ -1,3 +1,5 @@
+
+@import "./Styles/Variables/_fonts.module.scss";
 #root {
   /* max-width: 1280px; */
   margin: 0 auto;
@@ -9,6 +11,7 @@
 }
 .App {
   height: 100%;
+  font-family:$regular-font-family;
 }
 
 .logo {

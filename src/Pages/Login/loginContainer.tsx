@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useDataMutation } from "../../ReactQuery/ApiCrud/useDataMutation";
 import { Title, Text, Button } from "../../Components";
 import { ServicesNames } from "../../Constants/servicesNames";
-import LoginImage from "../../assets/Images/Login/img-web1.png"
+import LoginImage from "../../assets/Images/Login/img-web1.png";
+import LogoImage from "../../assets/Images/Login/Logo.png";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -50,38 +51,22 @@ const Login = () => {
       <Image preview={false} className={"loginImage"} alt="login" src={LoginImage} />
       </Col>
 
-      <Col lg={12}>
+      <Col lg={12} className="form-col">
+      <Col lg={11} className="form-content">
+      <Image preview={false} className={"login-logo"} alt="login" src={LogoImage} />
         <Text
-          typographyFontColor={"#3C65F5"}
           typographyType={{
             type: "regular-regular-regular",
             size: "14px-14px-14px",
           }}
         >
-          Welcome back!
+         Welcome back! Please login to your account.
         </Text>
-        <Title
-          className={"loginTitle"}
-          typographyType={{
-            type: "semi-bold-semi-bold-semi-bold",
-            size: "32px-32px-32px",
-          }}
-        >
-          Member Login
-        </Title>
-        <Text
-          typographyFontColor={"#6c757d"}
-          typographyType={{
-            type: "regular-regular-regular",
-            size: "14px-14px-14px",
-          }}
-        >
-          Access to all features. No credit card required.
-        </Text>
+       
         <Form name="login" onFinish={onFinish} layout="vertical">
           <Form.Item
             requiredMark={false}
-            label="Username or Email address *"
+            // label=" *"
             name="login"
             rules={[
               {
@@ -90,7 +75,7 @@ const Login = () => {
               },
             ]}
           >
-            <Input placeholder="Steven Job" />
+            <Input placeholder="Username or Phone Number" />
           </Form.Item>
           <Form.Item
             requiredMark={false}
@@ -140,6 +125,7 @@ const Login = () => {
           >
           </Text>
         </div>
+      </Col>
       </Col>
     </Row>
   );

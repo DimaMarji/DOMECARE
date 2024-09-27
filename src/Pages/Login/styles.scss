@@ -54,15 +54,12 @@
       }
       margin-bottom: 20px;
       .ant-input-affix-wrapper,#login_login{
-        height: 53px;
-        line-height: 53px;
-        font-size: 14px;
-        background: #fff;
-        border: 1px solid #E0E6F6;
-        height: 53px;
-        box-shadow: none;
+        height: 7vh;
+        min-height: 4.8vh;
+        box-shadow: var(--content-shadow);
+        border: none;
         padding-left: 20px;
-        font-size: 16px;
+        font-size: 14px;
         width: 100%;
       }
 
@@ -84,9 +81,24 @@
     }
 
      .ant-image:has(.loginImage){
-     height: 90vh;
-     margin-top: auto;
     
+     margin-top: auto;
+     .loginImage{
+      height: 98vh;
+     }
+    
+  }
+  .form-col{
+    background-color: #f9fcff;
+  }
+  .form-content{
+    margin: auto;
+    margin-top: 20vh;
+    .ant-image:has(.login-logo){
+      width: 60%;
+      display: block;
+      margin: auto;
+    }
   }
 
   .register-link{

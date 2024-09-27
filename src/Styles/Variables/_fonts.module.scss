@@ -1,24 +1,24 @@
-$regular-font-family: open-sans-regular;
-$semi-bold-font-family: open-sans-semi-bold;
-$bold-font-family: open-sans-bold;
+$regular-font-family: comfortaa-regular;
+$semi-bold-font-family: comfortaa-semibold;
+$bold-font-family: comfortaa-bold;
 
 
 @font-face {
-  font-family: "open-sans-regular";
-  src: url("../Fonts/OpenSans-Regular.ttf");
+  font-family: "comfortaa-regular";
+  src: url("../Fonts/Comfortaa-Regular.ttf");
 }
 
 @font-face {
-  font-family: "open-sans-semi-bold";
-  src: url("../Fonts/OpenSans-SemiBold.ttf");
+  font-family: "comfortaa-medium";
+  src: url("../Fonts/Comfortaa-Medium.ttf");
 }
 
 @font-face {
-  font-family: "open-sans-bold";
-  src: url("../Fonts/OpenSans-Bold.ttf");
+  font-family: "comfortaa-bold";
+  src: url("../Fonts/Comfortaa-Bold.ttf");
 }
 
 @font-face {
-  font-family: "open-sans-medium";
-  src: url("../Fonts/OpenSans-Medium.ttf");
+  font-family: "comfortaa-semibold";
+  src: url("../Fonts/Comfortaa-SemiBold.ttf");
 }
