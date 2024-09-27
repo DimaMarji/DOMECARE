@@ -1,0 +1,163 @@
+@import "../../Styles/Variables/_fonts.module.scss";
+@import "../../Styles/Helpers/mixins";
+
+.page-container {
+  //min-width: 280px;
+
+
+  max-width: 1440px;
+  margin: auto;
+
+  margin-bottom: 80px !important;
+
+  // TODO:  media query with Next-----------------------------
+  @include media-query(large-Desktop) {
+    max-width: 1200px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  @include media-query(laptop) {
+    margin-left: 8% !important;
+    margin-right: 8% !important;
+    max-width: unset;
+    // max-width: 1200px;
+  }
+
+  @include media-query(tablet) {
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+  }
+
+  @include media-query(mobile) {
+    margin-left: 6% !important;
+    margin-right: 6% !important;
+  }
+}
+
+.layout-container {
+  //display: grid;
+  //grid-template-columns: 100%;
+  //grid-template-rows: max-content auto max-content;
+  //grid-template-areas: "header""content""footer";
+  //// height: 100vh;
+  //position: relative;
+
+.layout-header-parent-container{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+
+  .ant-affix{
+    animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    left: 0;
+    transition: all 0.3s ease 0s;
+    border-bottom: 1px solid #E0E6F6;
+    background: #fff !important;
+    .ant-layout-header.header-container {
+      background-color: transparent;
+      height: 77px;
+    }
+    .layout-header-parent-container{
+      background-color:#fff;
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+    }
+  }
+
+}
+
+
+.layout-header-parent-container {
+  position: relative;
+  //background-color: #fff;
+  z-index: 10;
+  background: transparent;
+  //backdrop-filter: blur(10px);
+
+  &.shadowable {
+    box-shadow: 1px 2px 5px rgba(53, 172, 254, 0.1);
+  }
+
+}
+
+
+.layout-header-parent {
+  // TODO:  media query with Next-----------------------------
+  @include media-query(large-Desktop) {
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+  }
+
+  @include media-query(laptop) {
+    margin-left: 8.5% !important;
+    margin-right: 8.5% !important;
+  }
+
+  @include media-query(tablet) {
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+  }
+
+  @include media-query(mobile) {
+    margin-left: 6% !important;
+    margin-right: 6% !important;
+  }
+
+}
+
+.layout-content {
+  grid-area: content;
+  //min-height: 31vh;
+  min-height: 45.8vw;
+  z-index: 0;
+
+  &.hide-content {
+    display: none;
+  }
+}
+
+
+.layout-footer {
+  grid-area: footer;
+
+  &.hide-content {
+    display: none;
+  }
+}
+
+
+.page-appear {
+  opacity: 0;
+  //transform: scale(0.7) translateY(5rem);
+}
+
+.page-appear-active {
+  opacity: 1;
+  //transform: scale(1) translateY(0);
+  transition: opacity 600ms;
+}
+
+.page-exit {
+  opacity: 0.2;
+  //transform: scale(1);
+  //transition: opacity 600ms, transform 600ms;
+}
+
+
+.page-exit-active {
+  opacity: 0;
+  //transform: scale(0.6) translateY(-5rem);
+  //transition: opacity 600ms, transform 600ms;
+}
+
+
+

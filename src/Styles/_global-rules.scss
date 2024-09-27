@@ -1,0 +1,110 @@
+// global rules
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.ant-select-dropdown {
+  padding: 8px;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 1px solid #C7E0FC;
+  box-shadow: 2px 4px 4px 0px rgba(192, 229, 255, 0.3);
+
+
+}
+
+
+.select-with-api {
+  * {
+    line-height: 3 !important;
+  }
+
+  input{
+    height: 100%;
+
+
+  }
+  .ant-select-arrow .anticon-search svg {
+    font-size: 16px !important;
+  }
+
+}
+.select-with-api-dropdown.ant-select-dropdown{
+   .ant-select-item.ant-select-item-option {
+    margin-bottom: 0 !important;
+    padding-bottom: 10px !important;
+  }
+  .ant-select-item-option-content {
+    text-align: left;
+    font-size: 14px !important;
+
+  }
+}
+
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  min-height: 45px;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #165DAD !important;
+  border-color:  #165DAD !important;
+}
+.ant-checkbox-indeterminate .ant-checkbox-inner:after{
+  background-color: #165DAD !important;
+}
+
+.ant-tree-checkbox-checked .ant-tree-checkbox-inner {
+  background-color: #165DAD !important;
+  border-color:  #165DAD !important;
+}
+
+.ant-tree-checkbox-indeterminate .ant-tree-checkbox-inner:after{
+  background-color: #165DAD !important;
+}
+
+//tables styles
+
+.ant-table-filter-trigger.active {
+  color: #165DAD !important;
+}
+
+.ant-table-column-sorter-down.active, .ant-table-column-sorter-up.active {
+  color:#165DAD !important;
+}
+
+.ant-table-filter-dropdown{
+  padding: 8px;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 1px solid #C7E0FC;
+  box-shadow: 2px 4px 4px 0px rgba(192, 229, 255, 0.3);
+  overflow: hidden;
+
+  input{
+    border-radius: 5px;
+    border: 1px solid #C7E0FC;
+
+    &:focus,&:hover {
+      border-color: #C7E0FC;
+      box-shadow: 0 0 0 1px rgba(22, 93, 173, 0.46);
+      border-right-width: 1px;
+      outline: 0;
+    }
+  }
+
+  .ant-dropdown-menu-item {
+    &:hover,&.ant-dropdown-menu-item-selected {
+      color: #165DAD !important;
+    }
+  }
+  .ant-btn.ant-btn-primary{
+    background-color: #165DAD !important;
+    border-color: #165DAD !important;
+  }
+  .ant-btn-link{
+    color:  #165DAD !important;
+  }
+}

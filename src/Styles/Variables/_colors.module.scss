@@ -1,0 +1,46 @@
+// start header and content font colors
+
+// colorType-font-color: #232532  (example)
+
+$navy-blue-font-color: #232532;
+$navy-blue-font-color-232736: #232736;
+$white-font-color: #F5F5F5;
+$light-blue-font-color: #35ACFE;
+$light-yellow-font-color: #FFBF38;
+$dark-red-font-color: #9F2039;
+
+// colorType-font-color-15 => 15 refers to opacity percent  (example)
+
+$navy-blue-font-color-15: rgba(35, 37, 50, 0.15);
+$navy-blue-font-color-30: rgba(35, 37, 50, 0.3);
+$navy-blue-font-color-80: rgba(35, 37, 50, 0.8);
+
+// end header and content font colors
+
+// start footer colors
+
+$white-footer-font-color: #EBF1F7;
+$gray-footer-font-color-30: rgba(235, 241, 247, 0.3);
+$gray-footer-font-color-80: rgba(235, 241, 247, 0.8);
+
+// end footer colors
+
+// export all variables to use it in tsx files easily
+
+:export {
+  navy-blue: $navy-blue-font-color;
+  navy-blue-232736: $navy-blue-font-color-232736;
+  white: $white-font-color;
+  light-blue: $light-blue-font-color;
+  light-yellow: $light-yellow-font-color;
+  dark-red: $dark-red-font-color;
+  navy-blue-15: $navy-blue-font-color-15;
+  navy-blue-30: $navy-blue-font-color-30;
+  navy-blue-80: $navy-blue-font-color-80;
+  white-footer: $white-footer-font-color;
+  gray-footer-30: $gray-footer-font-color-30;
+  gray-footer-80: $gray-footer-font-color-80;
+}
+
+
+

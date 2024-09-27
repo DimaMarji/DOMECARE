@@ -1,0 +1,26 @@
+@import "../../Variables/colors";
+
+$button-primary-background-color: $app-button-primary-color;
+$button-primary-text-color: $app-button-text-color;
+$button-primary-border-color: #165DAD;
+$button-primary-background-color-hover: $app-button-secondary-color;
+$button-primary-text-color-hover: $app-button-text-color;
+$button-primary-border-color-hover: $app-button-secondary-color;
+$button-primary-background-color-disabled: $app-button-disabled-background-color;
+$button-primary-text-color-disabled: $app-button-disabled-text-color;
+$button-primary-border-color-disabled: $app-button-disabled-background-color;
+
+$button-secondary-background-color: $white-color;
+$button-secondary-text-color: $primary-colorized-color;
+$button-secondary-border-color: $primary-colorized-color;
+$button-secondary-background-color-hover: $white-color;
+$button-secondary-text-color-hover: $primary-colorized-color;
+$button-secondary-border-color-hover: $primary-colorized-color;
+$button-secondary-background-color-disabled: $app-button-disabled-background-color;
+$button-secondary-text-color-disabled: $app-button-disabled-text-color;
+$button-secondary-border-color-disabled: $app-button-disabled-background-color;
+
+$button-link-text-color: $primary-colorized-color;
+$button-link-text-color-hover: $app-button-tertiary-color;
+$button-link-text-color-disabled: $app-button-disabled-text-color;
+$button-link-box-shadow-color: $app-button-box-shadow-color;

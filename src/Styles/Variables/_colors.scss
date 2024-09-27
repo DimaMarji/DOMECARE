@@ -1,0 +1,137 @@
+// start background colors
+
+$primary-background-color: #F5F5F5;
+$secondary-background-color: #232532;
+
+// end background colors
+
+// start header and content font colors
+
+$primary-font-color: #232532;
+$secondary-font-color: rgba(35, 37, 50, 0.8);
+$advanced-font-color: #35ACFE;
+
+// end header and content font colors
+
+// start footer colors
+
+$first-footer-font-color: #EBF1F7;
+$second-footer-font-color: rgba(235, 241, 248, 0.9);
+$third-footer-font-color: rgba(235, 241, 247, 0.4);
+$fourth-footer-font-color: rgba(235, 241, 247, 0.9);
+
+// end footer colors
+
+$primary-color: #232532;
+$secondary-color: #7A858B;
+$tertiary-color: #35ACFE;
+$quaternary-color: #EBF1F7;
+$quinary-color: #EBEBEB;
+$senary-color: white;
+
+
+$primary-colorized-color: #165DAD;
+$secondary-colorized-color: #5BA4F7;
+$tertiary-colorized-color: #2d8bf1;
+
+
+$primary-app-color: #FFFFFF;
+$secondary-app-color: #C7E0FC;
+$tertiary-app-color: #F6F6F7;
+$quaternary-app-color: #42526D;
+
+$white-color: #FFFFFF;
+
+$app-primary-text-color: $quaternary-app-color;
+$app-primary-icon-color: #98A1B0;
+
+$app-layout-primary-color: $secondary-app-color;
+$app-layout-secondary-color: $primary-app-color;
+$app-layout-tertiary-color: $tertiary-app-color;
+
+$app-navbar-background-color: $primary-app-color;
+$app-navbar-border-bottom-color: rgba(31, 131, 244, 0.15);
+$app-navbar-text-color: #232736;
+$app-navbar-search-border-color: #E2EFFE;
+$app-navbar-search-text-color: #98A1B0;
+$app-navbar-icons-color: $primary-colorized-color;
+$app-navbar-items-color: $primary-colorized-color;
+$app-navbar-active-item-color: $primary-colorized-color;
+$app-navbar-items-hover-color: $primary-colorized-color;
+
+$app-sidebar-background-color: $primary-app-color;
+$app-sidebar-border-right-color: rgba(53, 172, 254, 0.1);
+$app-sidebar-icons-color: $quaternary-app-color;
+$app-sidebar-icons-color-filter: invert(77%) sepia(18%) saturate(615%) hue-rotate(348deg) brightness(90%) contrast(86%);
+$app-sidebar-text-color: $quaternary-app-color;
+$app-sidebar-text-hover-color: $quaternary-app-color;
+$app-sidebar-background-hover-color: $tertiary-app-color;
+$app-sidebar-selected-item-text-color: $primary-colorized-color;
+$app-sidebar-selected-item-background-color: $tertiary-app-color;
+$app-sidebar-selected-item-background-image: unset;
+$app-sidebar-selected-item-icon-color-filter: invert(77%) sepia(18%) saturate(615%) hue-rotate(348deg) brightness(87%) contrast(86%);
+$app-sidebar-selected-item-border-left-color: $primary-colorized-color;
+
+$app-footer-primary-background-color: $tertiary-app-color;
+$app-footer-primary-color: $secondary-app-color;
+$app-footer-secondary-color: $quaternary-app-color;
+
+$app-table-background-color: $primary-app-color;
+$app-table-background-hover-color: $tertiary-app-color;
+$app-table-columns-row-background-color: $primary-app-color;
+$app-table-column-title-color: #5D6B82;
+$app-table-column-icon-color: $quaternary-app-color;
+$app-table-active-sorter-icon-color: #5D6B82;
+$app-table-header-text-color: #5D6B82;
+$app-table-content-text-color: #5D6B82;
+$app-table-empty-text-color: #5D6B82;
+$app-table-border-color: $primary-app-color;
+$app-table-box-shadow-color: 3px 2px 16px -13px #1F83F4;
+$app-table-footer-background-color: $primary-app-color;
+$app-table-footer-text-color: $quaternary-app-color;
+$app-table-filter-button-color: $primary-colorized-color;
+
+
+$app-select-dropdown-background-color: $white-color;
+$app-select-dropdown-selected-color: #F6FAFF;
+$app-select-border-color: $secondary-app-color;
+$app-select-border-hover-color: $secondary-app-color;
+$app-select-background-not-selected-hover-color: #F6FAFF;
+$app-select-background-selected-color: #F6FAFF;
+$app-select-text-selected-color: $quaternary-app-color;
+$app-select-text-not-selected-color: $quaternary-app-color;
+$app-select-arrow-color: $app-primary-icon-color;
+
+
+$app-pagination-primary-color: #E5F4FF;
+$app-pagination-secondary-color: #7A8699;
+
+$app-dropdown-background-color: $primary-app-color;
+$app-dropdown-icons-color: $quaternary-app-color;
+$app-dropdown-icons-color-filter: unset;
+$app-dropdown-icons-hover-color: $secondary-colorized-color;
+$app-dropdown-icons-hover-color-filter: invert(16%) sepia(76%) saturate(7482%) hue-rotate(199deg) brightness(104%) contrast(106%);
+$app-dropdown-text-color: #5D6B82;
+$app-dropdown-text-hover-color: $secondary-colorized-color;
+
+$app-success-primary-color: #98F659;
+$app-error-primary-color: #9F2039;
+
+$app-scroll-primary-color: $primary-colorized-color;
+$app-scroll-secondary-color: $primary-app-color;
+
+$app-loading-primary-color: #b0764e;
+$app-loading-secondary-color: #EFD1B1;
+$app-loading-tertiary-color: #a13216;
+
+$app-custom-skeleton-primary-color: linear-gradient(90deg, #F4F7FA 25%, #EBF1F7 37%, #F4F7FA 63%);
+
+$app-pop-confirm-primary-color: beige;
+
+$app-button-primary-color: $primary-colorized-color;
+$app-button-secondary-color: $secondary-colorized-color;
+$app-button-tertiary-color: $tertiary-colorized-color;
+$app-button-text-color: $white-color;
+$app-button-disabled-background-color: rgba(229, 231, 235, 1);
+$app-button-disabled-text-color: rgba(156, 163, 175, 1);
+$app-button-box-shadow-color: 2px 4px rgba(31, 131, 244, 0.1);

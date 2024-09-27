@@ -1,0 +1,177 @@
+// mixins
+@mixin list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin central-page {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto max-content auto;
+  grid-template-rows: 20vh auto;
+  grid-template-areas: ". . ." ". content .";
+}
+
+@mixin circle($dimensions) {
+  border-radius: 50%;
+  width: $dimensions;
+  height: $dimensions;
+}
+
+@mixin centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin overlay($color, $opacity) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color, $opacity);
+}
+
+@mixin keyF($anim-name) {
+  @-webkit-keyframes #{$anim-name} {
+    @content;
+  }
+  @keyframes #{$anim-name} {
+    @content;
+  }
+}
+
+
+@mixin fixedTypographyStyle() {
+  line-height: 160%;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin fixedTitleLineHeight() {
+  line-height: 140%;
+}
+
+@mixin fixedTextLineHeight() {
+  line-height: 160%;
+}
+
+@mixin defaultTypographyStyle($color, $fontSize, $fontFamily) {
+  color: $color;
+  font-size: $fontSize;
+  font-family: $fontFamily;
+  @include fixedTypographyStyle;
+}
+
+@mixin titleSpecialCaseStyle(
+  $color,
+  $first-gradient-color,
+  $second-gradient-color,
+  $stroke-size,
+  $fontSize
+) {
+  color: $color !important;
+  background: -webkit-linear-gradient(
+                  $first-gradient-color,
+                  $second-gradient-color
+  ) no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: $stroke-size transparent;
+  font-size: $fontSize;
+}
+
+
+@mixin screen-size($size) {
+}
+
+/* start mixin for media queries */
+//@mixin media-query($size) {
+//  @if $size == large-Desktop {
+//    @media (min-width: 1440px) {
+//      @content;
+//    }
+//  } @else if $size == laptop {
+//    @media (max-width: 1439px) {
+//      @content;
+//    }
+//  } @else if $size == tablet {
+//    @media (max-width: 991px) {
+//      @content;
+//    }
+//  } @else if $size == mobile {
+//    @media (max-width: 576px) {
+//      @content;
+//    }
+//  }
+//  @else if $size == is-not-mobile {
+//    @media (min-width: 577px) {
+//      @content;
+//    }
+//  }
+//}
+
+// antd screens (min-width)
+//      xs: '480px',
+//      sm: '576px',
+//      md: '768px',
+//      lg: '992px',
+//      xl: '1200px',
+//      xxl: '1600px',
+@mixin media-query($size) {
+
+  @if $size == large-Desktop {
+
+    @media (min-width: 1440px) {
+
+      @content;
+
+    }
+
+  } @else if $size == laptop {
+
+    @media (max-width: 1439px) and (min-width: 992px) {
+
+      @content;
+
+    }
+    // TODO
+  } @else if $size == tablet {
+
+    @media (max-width: 991px) and (min-width: 576px) {
+
+      @content;
+
+    }
+
+  } @else if $size == tablet-and-mobile {
+
+    @media (max-width: 991px) {
+
+      @content;
+
+    }
+
+  } @else if $size == mobile {
+
+    @media (max-width: 575px) {
+
+      @content;
+
+    }
+
+  } @else if $size == is-not-mobile {
+
+    @media (min-width: 576px) {
+
+      @content;
+
+    }
+
+  }
+
+}
+
+/* end mixin for media queries */

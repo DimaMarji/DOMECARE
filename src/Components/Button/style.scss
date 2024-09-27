@@ -1,0 +1,174 @@
+@import "../../../Styles/Settings/Colors/buttons";
+@import "../../../Styles/Variables/padding";
+@import "../../../Styles/Variables/borders";
+@import "../../../Styles/Variables/fonts.module";
+@import "../../../Styles/Helpers/mixins";
+
+// primary button
+
+.ant-btn.ant-btn-primary {
+  background-color: $button-primary-background-color;
+  padding: $button-laptop-padding;
+  border-radius: $button-border-radius;
+  height: fit-content;
+  cursor: pointer;
+  width: fit-content;
+  border: 1px solid $button-primary-border-color;
+
+  .ant-typography {
+    color: $button-primary-text-color;
+  }
+
+  &:hover {
+
+      transform: translateY(-2px);
+      transition: 0.2s;
+
+    background-color: $button-primary-background-color-hover;
+    border: 1px solid $button-primary-border-color-hover;
+    height: fit-content;
+    cursor: pointer;
+
+    .ant-typography {
+      color: $button-primary-text-color-hover;
+    }
+  }
+
+  &:disabled {
+    background-color: $button-primary-background-color-disabled;
+    //padding: $button-laptop-padding;
+    border-radius: $button-border-radius;
+    border: 1px solid $button-primary-border-color-disabled;
+
+    height: fit-content;
+    cursor: unset;
+
+    .ant-typography {
+      color: $button-primary-text-color-disabled;
+    }
+
+    &:hover {
+      background-color: $button-primary-background-color-disabled !important;
+      border: 1px solid $button-primary-border-color-disabled;
+
+      .ant-typography {
+        color: $button-primary-text-color-disabled;
+      }
+    }
+  }
+
+  @include media-query(tablet) {
+    padding: $button-tablet-padding;
+  }
+  @include media-query(mobile) {
+    padding: $button-mobile-padding;
+  }
+}
+
+// default button ( secondary )
+
+.ant-btn.ant-btn-default.default-button {
+  background-color: $button-secondary-background-color;
+  padding: $button-laptop-padding;
+  border-radius: $button-border-radius;
+  height: fit-content;
+  cursor: pointer;
+  width: fit-content;
+  border: 1px solid $button-secondary-border-color;
+
+  .ant-typography {
+    color: $button-secondary-text-color;
+  }
+
+  &:hover {
+    background-color: $button-secondary-background-color-hover;
+    border: 1px solid $button-secondary-border-color-hover;
+    height: fit-content;
+    cursor: pointer;
+
+    .ant-typography {
+      color: $button-secondary-text-color-hover;
+    }
+  }
+
+  &:disabled {
+    background-color: $button-secondary-background-color-disabled;
+    //padding: $button-laptop-padding;
+    border-radius: $button-border-radius;
+    border: 1px solid $button-secondary-border-color-disabled;
+
+    height: fit-content;
+    cursor: unset;
+
+    .ant-typography {
+      color: $button-secondary-text-color-disabled;
+    }
+
+    &:hover {
+      background-color: $button-secondary-background-color-disabled !important;
+      border: 1px solid $button-secondary-border-color-disabled;
+
+      .ant-typography {
+        color: $button-secondary-text-color-disabled;
+      }
+    }
+  }
+
+  @include media-query(tablet) {
+    padding: $button-tablet-padding;
+  }
+  @include media-query(mobile) {
+    padding: $button-mobile-padding;
+  }
+}
+
+// default button ( link )
+
+.ant-btn.ant-btn-link.default-button {
+  height: fit-content;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0;
+  //box-shadow: $button-link-box-shadow-color;
+
+  .ant-typography {
+    color: $button-link-text-color;
+    //font-family: $font-family-regular;
+  }
+
+  &:hover {
+    height: fit-content;
+    cursor: pointer;
+
+    .ant-typography {
+      color: $button-link-text-color-hover;
+    }
+  }
+
+  &:disabled {
+    height: fit-content;
+    cursor: unset;
+
+    .ant-typography {
+      color: $button-link-text-color-disabled;
+    }
+
+    &:hover {
+
+      .ant-typography {
+        color: $button-link-text-color-disabled;
+      }
+    }
+  }
+
+  @include media-query(tablet) {
+    //padding: $button-tablet-padding;
+  }
+  @include media-query(mobile) {
+    //padding: $button-mobile-padding;
+  }
+
+}
+
+
+
