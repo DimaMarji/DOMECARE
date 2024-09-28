@@ -7,21 +7,6 @@ const servicesSlice = createSlice({
     services: mockServices,
   },
   reducers: {
-    toggleService: (state, action) => {
-      const toggleServiceById = (services, id, checked) => {
-        services?.forEach((service) => {
-          if (service.id === id) {
-            service.checked = checked;
-            if (service.children) {
-              toggleServiceById(service.children, id, checked);
-            }
-          } else if (service.children) {
-            toggleServiceById(service.children, id, checked);
-          }
-        });
-      };
-      toggleServiceById(state.services, action.payload.id, action.payload.checked);
-    },
     unlinkService: (state, action) => {
       const removeServiceById = (services, id) => {
         return services.filter((service) => {
@@ -48,6 +33,6 @@ const servicesSlice = createSlice({
   },
 });
 
-export const { toggleService, unlinkService, editService } = servicesSlice.actions;
+export const { unlinkService, editService } = servicesSlice.actions;
 
 export default servicesSlice.reducer;

@@ -9,7 +9,6 @@ import { Button } from "../../../Components";
 import {
   MenuOutlined,
   CloseOutlined,
-  HomeFilled,
   BellFilled,
   MessageFilled,
   UserOutlined,
