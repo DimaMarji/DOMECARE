@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3209" data-name="Rectangle 3209" width="24" height="24" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="ic_delet" clip-path="url(#clip-path)">
+    <g id="ic_delet-2" data-name="ic_delet" transform="translate(5.65 3.666)">
+      <path id="Path_1762" data-name="Path 1762" d="M60.241,2.083H57.376V1.563A1.563,1.563,0,0,0,55.813,0H53.73a1.563,1.563,0,0,0-1.563,1.563v.521H49.3a1.3,1.3,0,0,0-1.3,1.3V4.427a.521.521,0,0,0,.521.521h12.5a.521.521,0,0,0,.521-.521V3.386A1.3,1.3,0,0,0,60.241,2.083Zm-7.032-.521a.522.522,0,0,1,.521-.521h2.083a.522.522,0,0,1,.521.521v.521H53.209Z" transform="translate(-48)" fill="#3b86ff"/>
+      <path id="Path_1763" data-name="Path 1763" d="M73.527,184a.163.163,0,0,0-.163.171l.43,9.019a1.561,1.561,0,0,0,1.561,1.488h7.91a1.561,1.561,0,0,0,1.561-1.488l.43-9.019a.163.163,0,0,0-.163-.171Zm7.866,1.3a.521.521,0,0,1,1.042,0v6.771a.521.521,0,1,1-1.042,0Zm-2.6,0a.521.521,0,0,1,1.042,0v6.771a.521.521,0,1,1-1.042,0Zm-2.6,0a.521.521,0,0,1,1.042,0v6.771a.521.521,0,1,1-1.042,0Z" transform="translate(-72.538 -178.01)" fill="#3b86ff"/>
+    </g>
+  </g>
+</svg>

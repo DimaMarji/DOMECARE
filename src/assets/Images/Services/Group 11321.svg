@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="50" viewBox="0 0 8 50">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="6" height="30.69" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_11321" data-name="Group 11321" transform="translate(-448 -406)">
+    <g id="line" transform="translate(450 416.309)" clip-path="url(#clip-path)">
+      <g transform="translate(-128 -133)">
+        <rect id="round" width="3" height="3" rx="1.5" transform="translate(128 133)" fill="#c3daff"/>
+      </g>
+      <g transform="translate(-128 -124)">
+        <rect id="round-2" data-name="round" width="3" height="3" rx="1.5" transform="translate(128 133)" fill="#c3daff"/>
+      </g>
+      <g transform="translate(-128 -115)">
+        <rect id="round-3" data-name="round" width="3" height="3" rx="1.5" transform="translate(128 133)" fill="#c3daff"/>
+      </g>
+      <g transform="translate(-128 -106)">
+        <rect id="round-4" data-name="round" width="3" height="3" rx="1.5" transform="translate(128 133)" fill="#c3daff"/>
+      </g>
+    </g>
+    <rect id="pin" width="8" height="8" rx="4" transform="translate(448 448)" fill="#3b86ff"/>
+    <rect id="pin-2" data-name="pin" width="8" height="8" rx="4" transform="translate(448 406)" fill="#3b86ff"/>
+  </g>
+</svg>

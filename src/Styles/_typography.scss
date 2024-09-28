@@ -2,6 +2,6 @@
 // Generate font size classes from 8px to 0px dynamically
 @for $i from 8 through 60 {
   .font-size-#{$i} {
-    font-size: #{$i}px;
+    font-size: #{$i}px !important;
   }
 }

@@ -1,140 +1,137 @@
 .loginContainer {
-    text-align: center;
-    height: 100%;
-    border-radius: 8px;
-    position: relative;
- .image-col{
-  margin-top: auto;
- }
-    .loginTitle{
-      
-      margin-bottom: 5px !important;
-      margin-top: 5px !important;
+  text-align: center;
+  height: 100%;
+  border-radius: 8px;
+  position: relative;
+  .image-col {
+    margin-top: auto;
+  }
+  .loginTitle {
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+  }
+
+  .ant-form .remember-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    >.ant-form-item{
+      margin-bottom: 0 !important;
+    }
+    * {
+      font-size: 12px;
+    }
+    .ant-checkbox {
+      background-color: #ffffff;
+      border: 1px solid #e0e6f7;
+      border-radius: 7px;
+      color: #4f5e64;
+      .ant-checkbox-inner {
+        border-radius: 5px;
+      }
+      .ant-checkbox-checked .ant-checkbox-inner {
+        background: #3c65f5;
+      }
     }
 
-
-
-
-    .remember-container{
-      display: flex;
-      justify-content: space-between;
+    .ant-checkbox-wrapper {
       align-items: center;
-      margin-bottom: 12px;
-      *{
-      font-size: 12px;}
-      .ant-checkbox{
-        background-color: #ffffff;
-        border: 1px solid #E0E6F7;
-        border-radius: 7px;
-        color: #4F5E64;
-        .ant-checkbox-inner{
-          border-radius: 5px;
-      }
-      .ant-checkbox-checked  .ant-checkbox-inner{
-        background: #3C65F5}
-      }
-
-      .ant-checkbox-wrapper{
-        align-items: start;
+      padding-top: 6px;
+      span:not(.ant-checkbox){
         padding-top: 6px;
       }
-   
     }
-    .ant-form{
-      margin-top: 40px ;
-      text-align: start;
+  }
+  .ant-form {
+    margin-top: 40px;
+    text-align: start;
 
-      label{
-        &::before{
-          display: none !important;
-        }
+    label {
+      &::before {
+        display: none !important;
+      }
     }
-    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);s
-  
+
     .ant-form-item {
-     margin-bottom: 28px !important;
-      }
-      margin-bottom: 20px;
-      .ant-input-affix-wrapper,.ant-input-affix-wrapper{
-        height: 7vh;
-        min-height: 4.8vh;
-        box-shadow: 0 0 1.12vh rgba(196, 200, 208, 0.6);
-        border: none;
-        border-radius: 8px;
-        padding-left: 10px;
-        font-size: 11px;
-        width: 100%;
-      }
-
+      margin-bottom: 28px !important;
     }
-    .ant-form-item-explain-error {
+    margin-bottom: 20px;
+    .ant-input-affix-wrapper,
+    .ant-input-affix-wrapper {
+      height: 7vh;
+      min-height: 4.8vh;
+      box-shadow: 0 0 1.12vh rgba(196, 200, 208, 0.6);
+      border: none;
+      border-radius: 8px;
+      padding-left: 10px;
+      font-size: 11px;
+      width: 100%;
+    }
+  }
+  .ant-form-item-explain-error {
+    font-size: 12px !important;
+    padding-top: 6px;
+  }
+  button {
+    border-radius: 4px;
+    // border: none !important;
+    height: 38px !important;
+    * {
       font-size: 12px !important;
-      padding-top: 6px;
-  }
-    button {
-      border-radius: 4px;
-      // border: none !important;
-      height: 38px !important;
-      *{
-        font-size: 12px !important
-      }
-      
     }
+  }
 
-     .ant-image:has(.loginImage){
-    
-     margin-top: auto;
-     .loginImage{
+  .ant-image:has(.loginImage) {
+    margin-top: auto;
+    .loginImage {
       height: 98vh;
-     }
-    
+    }
   }
-  .form-col{
+  .form-col {
     background-color: #f9fcff;
-  
   }
-  .form-content{
+  .form-content {
     margin: auto;
     margin-top: 20vh;
-    
-    .ant-image:has(.login-logo){
+
+    .ant-image:has(.login-logo) {
       width: 60%;
       display: block;
       margin: auto;
     }
   }
 
-  .register-link{
+  .register-link {
     display: flex;
     gap: 20px;
-   justify-content: center;
-   height: 20px;
+    justify-content: center;
+    height: 20px;
   }
-  .login-footer{
+  .login-footer {
     text-align: center;
     position: absolute;
     bottom: 4vh;
     width: 100%;
-    *{
-color: #212529;}
-.privacy{
-  text-decoration: underline;
-}
-    
-  }
-  .login-link{
-      color: #6c757d;
-     &:hover{
-      color: #3C65F5;
-     }
-  }
-
-  }
-  .buttons-container{
-    display: flex;
-    gap: 32px;
-    button{
-      box-shadow: 0 0 1.12vh rgba(0, 0, 0, .2);
-      flex: 1;
+    * {
+      color: #212529;
+    }
+    .privacy {
+      text-decoration: underline;
     }
   }
+  .login-link {
+    color: #6c757d;
+    &:hover {
+      color: #3c65f5;
+    }
+  }
+}
+.buttons-container {
+  display: flex;
+  gap: 32px;
+  button {
+    box-shadow: 0 0 1.12vh rgba(0, 0, 0, 0.2);
+    flex: 1;
+  }
+}

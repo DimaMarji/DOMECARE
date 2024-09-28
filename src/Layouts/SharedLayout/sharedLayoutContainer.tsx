@@ -1,13 +1,13 @@
 import React, {FunctionComponent, useEffect, useState} from "react";
 import SharedNavBar from "./NavBar";
 import "./style.scss"
-import SharedFooter from "./Footer";
 import {useAppMediaQuery} from "../../Hooks/MediaQuery/use-app-media-query";
-import {Affix} from "antd";
+import {Affix, Breadcrumb, Layout as AntdLayout} from "antd";
 import { useCookies } from "react-cookie";
 import { useLocation, useNavigate } from "react-router-dom";
+import SharedSidebar from "./Sidebar/sharedSidebar";
 
-
+const {Content}= AntdLayout
 const SharedLayout: FunctionComponent<any> = (props) => {
 
     const [toggleMenu, setToggleMenu] = useState<boolean>(false)
@@ -38,18 +38,30 @@ if(!cookies?.token){
         <>
 
             <div className={`layout-container`}>
-                {(toggleMenu) ? <>{Layout}</> :
-                    <Affix offsetTop={0}>
-                    {Layout}
-                </Affix>}
+               {Layout}
                 <div
                      style={toggleMenu ? {display: "none"} : {}} className="layout-content">
-                    <div className="page-container">
+                        <AntdLayout>
+                        <SharedSidebar/>
+
+                        <AntdLayout style={{ padding: '0 24px 24px' }}>
+         
+          <Content
+            style={{
+              padding:" 0 24px",
+              margin: 0,
+              minHeight: 280,
+              background: "transparent",
+            }}
+          >
+             <div className="page-container">
                             {props.children}
                     </div>
-                </div>
-                <div  style={toggleMenu ? {display: "none"} : {}} className="layout-footer">
-                    <SharedFooter/>
+          </Content>
+        </AntdLayout>
+        </AntdLayout>
+
+                  
                 </div>
             </div>
 

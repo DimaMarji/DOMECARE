@@ -69,7 +69,7 @@ const Login = () => {
         <Form name="login" onFinish={onFinish} layout="vertical">
           <Form.Item
             requiredMark={false}
-            name="login"
+            name="username"
             rules={[
               {
                 required: true,

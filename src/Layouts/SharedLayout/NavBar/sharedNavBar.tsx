@@ -1,15 +1,21 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import "./styles.scss";
 import { useAppMediaQuery } from "../../../Hooks/MediaQuery/use-app-media-query";
-import LogoImage from "../../../public/Assets/Images/template/jobhub-logo.svg";
-import { Image, Typography } from "antd";
+import LogoImage from "../../../assets/Images/Services/LOGO.webp";
+import { Badge, Image, Typography } from "antd";
 import { Layout } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Button} from "../../../Components";
-import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import { Button } from "../../../Components";
+import {
+  MenuOutlined,
+  CloseOutlined,
+  HomeFilled,
+  BellFilled,
+  MessageFilled,
+  UserOutlined,
+} from "@ant-design/icons";
 
-
-const {Text} =Typography
+const { Text } = Typography;
 
 interface SharedNavBarProps {
   setToggleMenu?: any;
@@ -20,10 +26,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
   setToggleMenu,
   toggleMenu,
 }) => {
-  const { pathname: selected} = useLocation();
-  const push=useNavigate()
-
- 
+  const push = useNavigate();
 
   const { isMobileOrTablet } = useAppMediaQuery();
 
@@ -45,101 +48,28 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
       onClick={(event: any) => toggleNav(false, event)}
       className="menu-button"
       type={"link"}
-      icon={
-        <CloseOutlined />
-      }
+      icon={<CloseOutlined />}
     />
   );
 
-  const menuItemsData = [
-    {
-      key: "/",
-      label: "Home",
-    },
-    {
-      key:  "/jobs-list",
-      label: "Find a Job",
-    }, {
-      key: "/recruiters",
-      label: "Recruiters",
-    },  {
-      key: "/about-us",
-      label: "About Us"
-  },
-    {
-      key: "/pricing",
-      label: "Pricing",
-    },
-    {
-      key: "/contact-us",
-      label: "Contact Us",
-    }, 
-      {
-        key: "/blogs",
-        label: "Blog",
-      },
-  ];
-
-  const menuItems = menuItemsData?.map((item, index) => {
-    const isSelected =
-      item.key === "/"
-        ? selected === item.key
-        : selected.startsWith(item.key);
-
-    return (
-      <>
-    
-          <Text
-            key={index}
-            className={
-              isSelected
-                ? "header-menu-item navbar-selected-item"
-                : "header-menu-item navbar-not-selected-item"
-            }
-            onClick={(event) => {
-              push(item.key);
-              toggleNav(false, event);
-            }}
-           
-          >
-            {item.label}
-          </Text>
-      
-      </>
-    );
-  });
-
   const menu = (
-    <>
-      <div className={"header-space"}>{menuItems}</div>
-      <Button
-          type={"link"}
-          className={"register-button"}
-          onClick={(event) => {
-            push("/ContactUs");
-            toggleNav(false, event);
-          }}
-        >
-          Register
-        </Button>
-        <Button
-          type={"primary"}
-          className={"sign-in-button"}
-          onClick={(event) => {
-            push("/ContactUs");
-            toggleNav(false, event);
-          }}
-        >
-          Sign In
-        </Button>
-        {/* <Select
+    <div className="header-buttons">
+      <Button type={"link"} className={"header-button"} disabled>
+        <MessageFilled />
+      </Button>
+      <Button type={"link"} className={"header-button"}>
+        <BellFilled />
+      </Button>
+      <Button type={"link"} className={"header-button"} disabled>
+        <UserOutlined />
+      </Button>
+      {/* <Select
         value={locale}
         options={[{ value:"en",label:"English"},{ value:"ar",label:"العربية"}]}
         onSelect={(value) =>switchLanguage(value)}
         style={{ padding: '8px', fontSize: '16px' ,minWidth:"100px"}}
       /> */}
-       
-    </>
+    </div>
   );
 
   const [isHydrated, setHydrated] = useState(false);
@@ -152,7 +82,6 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
 
   return (
     <>
-
       <Header
         id="job-nav"
         className={
@@ -171,7 +100,8 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
             className={"logo-button"}
           >
             <Image
-              alt={"job-logo"}
+              preview={false}
+              alt={"logo"}
               className={"logo-image"}
               src={LogoImage}
             />
