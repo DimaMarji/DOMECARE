@@ -10,17 +10,18 @@ import OffersIcon from "../../../assets/Icons/Sider/ic_offers.svg";
 import MyInstitutionIcon from "../../../assets/Icons/Sider/my-institution.svg";
 
 import InstitutionIcon from "../../../assets/Icons/Sider/institution.svg";
+import { ILoginResponse } from "../../../ReactQuery/Auth/useLogin";
 
-const userInfo={
-    first_name:"User",
-    last_name:"Name",
-    avatar:""
-}
+// const userInfo={
+//     first_name:"User",
+//     last_name:"Name",
+//     avatar:""
+// }
 
-export const siderItems = [
+export const siderItems =(userData:ILoginResponse)=> [
     { label: <Space className="user-info" align="center">
-        <Avatar src={userInfo?.avatar}/>
-        <Title className="font-size-14">{`${userInfo?.first_name} ${userInfo?.last_name}`}</Title>
+        <Avatar src={userData?.image}/>
+        <Title className="font-size-14">{`${userData?.firstName} ${userData?.lastName}`}</Title>
     </Space>, key: "user", icon: "",disabled:true },
     { label: "Home", key: "/", icon: <Image width={22} preview={false} src={HomeIcon}  /> },
     { label: "My institution", key: "/my-institution", icon: <Image width={22} preview={false} src={MyInstitutionIcon}  />},

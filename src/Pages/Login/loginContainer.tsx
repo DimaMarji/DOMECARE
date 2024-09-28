@@ -1,54 +1,36 @@
-import { useEffect, useState } from "react";
-import { Checkbox, Col, Form, Input, message, Image, Row, Typography } from "antd";
+import { useEffect } from "react";
+import { Checkbox, Col, Form, Input, Image, Row, Typography } from "antd";
 import { useCookies } from "react-cookie";
 import "./styles.scss";
 import { useNavigate } from "react-router-dom";
-import { useDataMutation } from "../../ReactQuery/ApiCrud/useDataMutation";
-import { ServicesNames } from "../../Constants/servicesNames";
 import LoginImage from "../../assets/Images/Login/img-web1.png";
 import LogoImage from "../../assets/Images/Login/Logo.png";
 
 import PasswordIcon from "../../assets/Icons/Login/ic_password.svg";
 import UserIcon from "../../assets/Icons/Login/ic_user.svg";
 import { Button } from "../../Components";
+import useLogin from "../../ReactQuery/Auth/useLogin";
 
 
 const {Text}=Typography
 
 const Login = () => {
-  const [loading, setLoading] = useState(false);
-  const [cookies, setCookie] = useCookies(["token"]);
-
-  const [token, setToken] = useState(cookies?.token);
+  const [cookies] = useCookies(["accessToken"]);
 
   const  push = useNavigate();
 
-  const mutation = useDataMutation<
-    { token: string },
-    { email: string; password: string }
-  >("post", ServicesNames.Login, {
-    onSuccess: (data) => {
-      setCookie("token", data.token, { path: "/" });
-      setToken(data.token);
-      message.success("Login successful");
-      setLoading(false);
-    },
-    onError: () => {
-      message.error("Login failed");
-      setLoading(false);
-    },
-  });
+
+  const { mutate, isLoading } = useLogin();
 
   const onFinish = (values: { email: string; password: string }) => {
-    setLoading(true);
-    mutation.mutate(values);
+    mutate(values);
   };
 
   useEffect(() => {
-    if (cookies?.token) {
+    if (cookies?.accessToken) {
       push("/");
     }
-  }, [cookies?.token]);
+  }, [cookies?.accessToken]);
 
   return (
     <Row className={"loginContainer"}>
@@ -107,7 +89,7 @@ const Login = () => {
               type="primary"
               htmlType="submit"
               className="login-button"
-              loading={loading}
+              loading={isLoading}
             >
               Login
             </Button>

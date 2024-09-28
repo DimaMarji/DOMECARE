@@ -16,12 +16,19 @@ const MainRouter: FunctionComponent<MainRouterProps> = () => {
   
   const GenerateCrumb=() =>{
     const paths = window.location.pathname.split("/").slice(1);
+    console.log(paths)
     return (
         <Breadcrumb separator={<DoubleRightOutlined />}>
             <Breadcrumb.Item>
                 <Link to="/" style={{color:"#3b86ff"}}><HomeFilled  className="home-icon"/>Home</Link>
             </Breadcrumb.Item>
-            {paths.map((path, index) => {
+            <Breadcrumb.Item>
+                <Link to="/" >Profile</Link>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>
+                <Link to="/">Services</Link>
+            </Breadcrumb.Item>
+            {paths?.length> 1 && paths.map((path, index) => {
                 return (
                     <>
                         <Breadcrumb.Item key={index}>
@@ -47,7 +54,7 @@ const MainRouter: FunctionComponent<MainRouterProps> = () => {
               <Outlet />
             </SharedLayoutContainer>
           ),
-          children: PrivateRoutes ?? <Loading />,
+          children: PrivateRoutes,
         },
 
         {
@@ -55,11 +62,11 @@ const MainRouter: FunctionComponent<MainRouterProps> = () => {
           element: <Outlet />,
           children: PublicRoutes,
         },
-        {
-          path: "/",
-          element: <div />,
-          children: SystemRoutes,
-        },
+        // {
+        //   path: "/",
+        //   element: <div />,
+        //   children: SystemRoutes,
+        // },
       ])}
     />
   );

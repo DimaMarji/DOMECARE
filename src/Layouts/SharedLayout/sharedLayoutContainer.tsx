@@ -2,26 +2,24 @@ import React, {FunctionComponent, useEffect, useState} from "react";
 import SharedNavBar from "./NavBar";
 import "./style.scss"
 import {useAppMediaQuery} from "../../Hooks/MediaQuery/use-app-media-query";
-import {Affix, Breadcrumb, Layout as AntdLayout} from "antd";
+import {Layout as AntdLayout} from "antd";
 import { useCookies } from "react-cookie";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SharedSidebar from "./Sidebar/sharedSidebar";
 
 const {Content}= AntdLayout
 const SharedLayout: FunctionComponent<any> = (props) => {
 
     const [toggleMenu, setToggleMenu] = useState<boolean>(false)
-    const {pathname} = useLocation()
     const push = useNavigate()
 
-    const{isLargeDesktop}=useAppMediaQuery()
-    const [cookies, setCookie] = useCookies(['token']);
+    const{isMobileOrTablet}=useAppMediaQuery()
+    const [cookies] = useCookies(['accessToken']);
 useEffect(()=>{
-console.log("cookies",cookies)
-if(!cookies?.token){
+if(!cookies?.accessToken){
     push("/login")
 }
-},[cookies?.token])
+},[cookies?.accessToken])
     
 
     const Layout = <div className={`layout-header-parent-container`}>

@@ -1,6 +1,7 @@
 import { Avatar, Image, Layout, Menu, Space } from "antd";
 import "./styles.scss";
 import { siderItems } from "./constants";
+import { useSelector } from "react-redux";
 
 
 const { Sider } = Layout;
@@ -8,7 +9,9 @@ const { Sider } = Layout;
 const SharedSidebar: React.FC = () => {
 
 
+  const userData = useSelector((state) => state.auth.user);
 
+  console.log(userData)
 
   return (
     <Sider theme="light" className="layout-sider">
@@ -17,7 +20,7 @@ const SharedSidebar: React.FC = () => {
         theme="light"
         defaultSelectedKeys={["1"]}
         mode="inline"
-        items={siderItems}
+        items={siderItems(userData)}
       />
     </Sider>
   );
