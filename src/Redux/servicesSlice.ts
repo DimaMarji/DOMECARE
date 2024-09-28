@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { mockServices } from '../API/MockData/servicesData';
+import { mockServices, newMockServices } from '../API/MockData/servicesData';
 
 const servicesSlice = createSlice({
   name: 'services',
   initialState: {
     services: mockServices,
+    newServices:newMockServices
   },
   reducers: {
     unlinkService: (state, action) => {
@@ -13,10 +14,12 @@ const servicesSlice = createSlice({
           if (service.children) {
             service.children = removeServiceById(service.children, id);
           }
+          if(service.id == id) state.newServices=[...state.newServices,service]
           return service.id !== id;
         });
       };
       state.services = removeServiceById(state.services, action.payload.id);
+     
     },
     editService: (state, action) => {
       const editServiceById = (services, id, newName) => {
@@ -29,10 +32,13 @@ const servicesSlice = createSlice({
         });
       };
       editServiceById(state.services, action.payload.id, action.payload.newName);
+    }, 
+    addService: (state, action) => {
+      state.services.push(action.payload);
     },
   },
 });
 
-export const { unlinkService, editService } = servicesSlice.actions;
+export const { unlinkService, editService , addService} = servicesSlice.actions;
 
 export default servicesSlice.reducer;

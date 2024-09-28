@@ -1,16 +1,28 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Collapse, Checkbox, Button, Input, Modal, Image } from 'antd';
-import {unlinkService, editService } from '../../../Redux/servicesSlice';
+import { Collapse, Checkbox, Input, Modal, Image } from 'antd';
+import {unlinkService, editService, addService } from '../../../Redux/servicesSlice';
 import EditIcon from "../../../assets/Icons/Services/ic_edite.svg";
 import UnlinkIcon from "../../../assets/Icons/Services/unlink.svg";
 import "./styles.scss"
-import { handleChildToggle, handleParentToggle, isParentChecked, isParentIndeterminate } from './helpers';
+import { addSelectedServices, filterAvailableServices, handleChildToggle, handleParentToggle, isParentChecked, isParentIndeterminate } from './helpers';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { CloseOutlined, SearchOutlined } from '@ant-design/icons';
+import { Button } from '../../../Components';
 
 const { Panel } = Collapse;
 
+const {Search}= Input
+
 const ServiceManager = () => {
-  const services = useSelector((state) => state?.services?.services);
+  
+  const {search,pathname} =useLocation();
+  const navigate=useNavigate()
+  const isAddService=search.split("=")?.[1]=="add-services";
+  const stateServices = useSelector((state) => state?.services?.services);
+  const stateNewServices = useSelector((state) => state?.services?.newServices);
+  const services =isAddService? filterAvailableServices(stateServices,stateNewServices): stateServices
+
   const dispatch = useDispatch();
 
   const [editingServiceId, setEditingServiceId] = useState(null);
@@ -37,13 +49,38 @@ const ServiceManager = () => {
     setServiceToUnlink(null);
   };
 
-  const actionsButton= (service)=><div className='actions-container'  onClick={(e) => e.stopPropagation()}>   
-  <Button type="link" danger onClick={() => handleUnlinkService(service.id)}>
+  const handleAddServices = () => {
+    const services = addSelectedServices(checkedItems);
+    services.forEach(service => {
+      dispatch(addService(service));
+    });
+  };
+
+  const actionsButton= (service,isChild?:boolean)=>isAddService?null 
+  :<div className='actions-container'  onClick={(e) => e.stopPropagation()}>   
+  {!isChild && <Button type="link" danger onClick={() => handleUnlinkService(service.id)}>
   <Image preview={false} width={20} src={UnlinkIcon}/>
-  </Button>
+  </Button>}
   <Button type="link" onClick={() => setEditingServiceId(service.id)}>
     <Image preview={false} width={20} src={EditIcon}/>
   </Button>
+  </div>
+
+  const linkButton=<div className='add-service-header'>
+    <Search placeholder="Search.." enterButton={false} prefix={<SearchOutlined/>}/>
+  <div className='link-service-buttons'>
+    <Button onClick={()=>{
+    setCheckedItems({})
+    navigate(pathname)
+  }} type='secondary'>
+    <CloseOutlined/>
+  </Button>
+    <Button  onClick={()=>{
+    handleAddServices()
+  }} type='primary'>
+    Link
+  </Button>
+  </div>
   </div>
 
   const renderServices = (services) => {
@@ -102,7 +139,7 @@ const ServiceManager = () => {
               )}
                 
               </Checkbox>
-               {actionsButton(child)}
+               {actionsButton(child,true)}
                </div>
             ))}
           </div>
@@ -113,6 +150,7 @@ const ServiceManager = () => {
 
   return (
     <div className='services-container'>
+      {isAddService && linkButton}
       <Collapse>{renderServices(services)}</Collapse>
 
       <Modal

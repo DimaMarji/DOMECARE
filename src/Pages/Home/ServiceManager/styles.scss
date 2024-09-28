@@ -1,0 +1,126 @@
+@import "../../../Styles/Variables/fonts.module";
+
+
+
+.services-container {
+    max-height: 50vh;
+    overflow: auto;
+  text-align: left;
+  * {
+    font-size: 12px;
+  }
+
+  .ant-collapse{
+    border: none;
+    margin-top: 28px;
+    margin-right: 24px;
+  }
+  .service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ant-collapse-header {
+    align-items: center !important;
+    padding: 4px 12px !important;
+    background-color: #FFF;
+    border-radius: 10px;
+    border: none;
+    &:has(.ant-checkbox-wrapper-checked){
+        background-color: #f5f9ff;
+        border-radius: 10px;
+    }
+  }
+  .ant-collapse-content-box .service-item{
+
+    
+    padding: 4px 12px 4px 32px !important ;
+    margin-bottom: 4px;
+    &:has(.ant-checkbox-wrapper-checked){
+    background-color: #f5f9ff;
+    border-radius: 10px;}
+}
+
+  
+  .ant-collapse-content-box{
+    padding: 4px 0 4px 10px !important;
+  }
+  .actions-container {
+    button {
+      padding-inline: 4px !important;
+    }
+  }
+}
+
+
+.service-title {
+  position: relative;
+  width: fit-content;
+  font-family: $bold-font-family;
+  margin-bottom: 20px !important;
+  &::after {
+    position: absolute;
+    content: "";
+    border-radius: 6px;
+    width: 50px;
+    height: 5px;
+    background-color: #3b86ff;
+    bottom: -6px;
+    left: 0;
+  }
+ 
+
+}
+.link-service-buttons{
+  text-align: end;
+  .ant-btn-primary{
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    width: 100px;
+    margin-left: 12px;
+    padding: 6px 20px !important;
+  }
+  .ant-btn.ant-btn-default.default-button{
+    width: 36px;
+    height: 36px;
+    padding: 8px !important;
+    border-width: 1.5px;
+    border-radius: 50%;
+  }
+  button{
+    transform: none !important;
+  }
+}
+
+.add-service-header{
+  display: flex;
+  justify-content: space-between;
+  .ant-input-search{
+    width: 250px !important;
+    margin-left: 3px;
+    .ant-input-wrapper{
+      height: 32x;
+    }
+    .ant-input-affix-wrapper{
+      border-radius: 18px !important;
+    }
+    .ant-input-group-addon{
+      display: none;
+    }
+    .ant-input-prefix{
+      border-top-left-radius: 18px !important;
+      border-bottom-left-radius: 18px !important;
+      
+      height: 32px;
+      width: 32px;
+      justify-content: center;
+      border-right: none !important;
+      *{
+        color: #3b86ff;
+        font-size: 18px;
+      }
+    }
+  }
+}

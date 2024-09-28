@@ -2,7 +2,7 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import "./styles.scss";
 import { useAppMediaQuery } from "../../../Hooks/MediaQuery/use-app-media-query";
 import LogoImage from "../../../assets/Images/Services/LOGO.webp";
-import { Badge, Image, Typography } from "antd";
+import { Badge, Dropdown, Image, Space, Typography } from "antd";
 import { Layout } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../../../Components";
@@ -12,7 +12,9 @@ import {
   BellFilled,
   MessageFilled,
   UserOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons";
+import { useCookies } from "react-cookie";
 
 const { Text } = Typography;
 
@@ -28,6 +30,9 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
   const push = useNavigate();
 
   const { isMobileOrTablet } = useAppMediaQuery();
+
+  
+  const [cookies,setCookie,removeCookie] = useCookies(['accessToken']);
 
   const toggleNav = (value: boolean, event: any) => {
     event.preventDefault();
@@ -59,9 +64,11 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
       <Button type={"link"} className={"header-button"}>
         <BellFilled />
       </Button>
-      <Button type={"link"} className={"header-button"} disabled>
+      <Dropdown menu={{items:[{label:<Space onClick={()=>  removeCookie('accessToken')}><LogoutOutlined /><span>Logout</span></Space>,key:"logout"}]}}> 
+      <Button type={"link"} className={"header-button"} >
         <UserOutlined />
       </Button>
+      </Dropdown>
       {/* <Select
         value={locale}
         options={[{ value:"en",label:"English"},{ value:"ar",label:"العربية"}]}

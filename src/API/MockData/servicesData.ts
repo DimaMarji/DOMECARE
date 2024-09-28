@@ -45,3 +45,27 @@ export const mockServices = [
     },
   ];
   
+
+  export const newMockServices=[ {
+    id: 15,
+    name: 'Service Group 5',
+    children: [
+      { id: 16, name: 'Sub-service 5.1' },
+      {
+        id: 17,
+        name: 'Sub-service 5.2',
+        children: [{ id: 18, name: 'Sub-service 5.2.1' }],
+      },
+    ],
+  },{
+    id: 18,
+    name: 'Service Group 6',
+    children: [
+      { id: 19, name: 'Sub-service 6.1' },
+      {
+        id: 20,
+        name: 'Sub-service 6.2',
+        children: [{ id: 21, name: 'Sub-service 6.2.1' }],
+      },
+    ],
+  }]

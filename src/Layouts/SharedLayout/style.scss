@@ -25,6 +25,14 @@ background-color: #f5f6fa;
 }
 
 .layout-container {
+  flex-direction: column;
+  display: flex;
+  height: 100vh;
+  // height: 100%;
+  .layout-content{
+    flex: auto;
+    align-items: stretch;
+  }
 
 .layout-header-parent-container{
 
