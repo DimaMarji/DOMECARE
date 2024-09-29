@@ -1,50 +1,76 @@
-# React + TypeScript + Vite
+# Advanced Services Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a comprehensive web application designed to manage hierarchical groups of services. It includes features like authentication, viewing, adding, editing, and unlinking services.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [State Management](#state-management)
+- [Routing](#routing)
+- [Responsive Design](#responsive-design)
+- [Error Handling](#error-handling)
+- [Git Version Control](#git-version-control)
+- [Future Improvements](#future-improvements)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+1. **Login**: 
+   - Username and password-based authentication.
+   - Form validation with error handling.
+   - Uses the API endpoint: `https://dummyjson.com/auth/login`.
+   
+2. **Services Overview**:
+   - Display user information from API.
+   - Fetch hierarchical services from mock data and display them in a tree view.
+   - Expand/collapse service groups.
+   - Checkbox selection logic that propagates through the hierarchy.
+   - Remove services with cascading delete confirmation for services with child groups.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. **Service Management**:
+   - Edit services and propagate changes to child services.
+   - Immediate UI update after data modification.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. **Access Control**: 
+   - Protected routes for authenticated users.
+   - Logout functionality to clear session and return to login page.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+5. **Responsive Design**: 
+   - Optimized for both desktop and mobile viewports.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+6. **Error Handling**:
+   - Error handling with `onError` from `useQuery` and `useMutation`.
+
+## Technologies Used
+
+- **React.js** (Functional Components, Hooks)
+- **Vite** (Fast bundling and development)
+- **Redux Toolkit** (State management for hierarchical services)
+- **React Query** (Asynchronous data fetching and caching)
+- **React Router** (Client-side routing)
+- **Ant Design (AntD)** (UI Component Library)
+- **React Responsive** (Responsive layouts)
+- **TypeScript** (For type safety)
+- **react-cookie** (For authentication token management)
+- **Git** (Version control)
+
+## Prerequisites
+
+Make sure you have the following installed on your local machine:
+
+- [Node.js](https://nodejs.org/en/) (version 14.x or higher)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/DimaMarji/DOMECARE.git
+npm install
+npm run dev
+
