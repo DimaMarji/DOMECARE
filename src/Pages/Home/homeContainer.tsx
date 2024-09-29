@@ -15,7 +15,7 @@ const Home: React.FC = () => {
    
        <Row>
         
-       <Col md={16}>
+       <Col md={16} sm={24} xs={24}>
        <div className="service-page">
       <div style={{display:"flex",justifyContent:"space-between",width:"100%"}}>
         <Title className="font-size-16 service-title">{isAddService?"Add New Services":"Services"}</Title>

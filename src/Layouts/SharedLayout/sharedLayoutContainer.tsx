@@ -40,7 +40,7 @@ if(!cookies?.accessToken){
                 <div
                      style={toggleMenu ? {display: "none"} : {}} className="layout-content">
                         <AntdLayout>
-                        <SharedSidebar/>
+                      {!isMobileOrTablet && <SharedSidebar/>}
 
                         <AntdLayout style={{ padding: '0 24px 24px' }}>
          

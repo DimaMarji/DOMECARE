@@ -12,18 +12,13 @@ import MyInstitutionIcon from "../../../assets/Icons/Sider/my-institution.svg";
 import InstitutionIcon from "../../../assets/Icons/Sider/institution.svg";
 import { ILoginResponse } from "../../../ReactQuery/Auth/useLogin";
 
-// const userInfo={
-//     first_name:"User",
-//     last_name:"Name",
-//     avatar:""
-// }
 
-export const siderItems =(userData:ILoginResponse)=> [
+export const siderItems =(userData:ILoginResponse,pathname:string)=> [
     { label: <Space className="user-info" align="center">
         <Avatar src={userData?.image}/>
         <Title className="font-size-14">{`${userData?.firstName} ${userData?.lastName}`}</Title>
     </Space>, key: "user", icon: "",disabled:true },
-    { label: "Home", key: "/", icon: <Image width={22} preview={false} src={HomeIcon}  /> },
+    { label: "Home",className:`${pathname=="/"?"selected-item":""}`, key: "/", icon: <Image width={22} preview={false} src={HomeIcon}  /> },
     { label: "My institution", key: "/my-institution", icon: <Image width={22} preview={false} src={MyInstitutionIcon}  />},
     { label: "Institution", key: "/institution", icon:<Image width={22} preview={false} src={InstitutionIcon}  /> },
     { label: "Drugs", key: "/drugs", icon: <Image preview={false} width={22} src={DrugsIcon}  /> },

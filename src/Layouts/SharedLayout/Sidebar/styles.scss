@@ -13,7 +13,7 @@
       height: auto;
       gap: 8px;
     }
-    .ant-menu-item-selected,
+    .ant-menu-item-selected,.selected-item,
     .ant-menu-item:hover:not(.ant-menu-item-disabled) {
       background-color: #f5f6fa !important;
       border-top-left-radius: 15px;

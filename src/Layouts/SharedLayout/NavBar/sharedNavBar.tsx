@@ -15,6 +15,7 @@ import {
   LogoutOutlined,
 } from "@ant-design/icons";
 import { useCookies } from "react-cookie";
+import SharedSidebar from "../Sidebar/sharedSidebar";
 
 const { Text } = Typography;
 
@@ -56,7 +57,7 @@ const SharedNavBar: FunctionComponent<SharedNavBarProps> = ({
     />
   );
 
-  const menu = (
+  const menu = (isMobileOrTablet?<SharedSidebar/>:
     <div className="header-buttons">
       <Button type={"link"} className={"header-button"} disabled>
         <MessageFilled />

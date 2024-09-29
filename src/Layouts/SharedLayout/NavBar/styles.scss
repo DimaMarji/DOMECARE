@@ -80,11 +80,26 @@
 
 
 @include media-query(tablet-and-mobile){
+  .navbar-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    width: 100%;
+  }
   .header-container-menu-opened{
+    &.ant-layout-header {
+      height: 64px;
+      padding: 0 32px;
+      background: #FFF;
+      line-height: 64px;
+  }
 
-    background-color: transparent;
-    padding: 0;
   
+    .layout-sider{
+      max-width: unset !important;
+      width: 100% !important;
+      margin-top: 32px;
+    }
     
   }
 }
